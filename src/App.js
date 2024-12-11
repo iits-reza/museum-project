@@ -1,11 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import LotusAnimation from "./components/LotusAnimation";
+import Header from "./components/header/header";
 
 function App() {
   return (
     <div className="App">
-      <h1>Lotus Opening Animation</h1>
+      <Header />
       <LotusAnimation />
     </div>
   );
