@@ -6,8 +6,10 @@ import Header from "./components/header/header";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <LotusAnimation />
+      {/* <Header /> */}
+      <div>
+        <LotusAnimation />
+      </div>
     </div>
   );
 }
