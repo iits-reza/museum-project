@@ -28,12 +28,7 @@ const LotusAnimation = () => {
   ];
 
   return (
-    <svg
-      width="600"
-      height="600"
-      viewBox="0 0 200 200"
-      style={{ border: "1px solid lightgray" }}
-    >
+    <svg width="1400" height="800" viewBox="0 0 190 180">
       {/* Center of the SVG */}
       {petals.map((petal, index) => (
         <Petal key={index} rotationAngle={petal.angle} delay={petal.delay} />
