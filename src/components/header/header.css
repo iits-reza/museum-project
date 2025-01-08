@@ -1,7 +1,15 @@
 .header {
-  border: 1px solid black;
+  width: 100%;
+}
+.header__cover {
   height: 400px;
   width: 100%;
+  background-size: cover;
+  background-image: url(../../images/bamiyanbg.png);
+}
+.header__bottom {
+  height: 200px;
+  width: 100%;
   background-size: contain;
-  background-image: url(../../../public/images/header.jpg);
+  background-image: url(../../images/header.jpg);
 }

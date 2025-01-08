@@ -4,7 +4,7 @@ import "./App.css";
 import LotusAnimation from "./components/LotusAnimation";
 import AvatarFrame from "./components/photoCover/photoCover";
 
-// import Header from "./components/header/header";
+import Header from "./components/header/header";
 
 function App() {
   const defaultOptions = {
@@ -17,10 +17,9 @@ function App() {
   };
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <LotusAnimation />
       <Lottie options={defaultOptions} height={40} width={40} />
-      <AvatarFrame />
     </div>
   );
 }

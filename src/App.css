@@ -3,7 +3,6 @@ body {
   background-image: url(../public/images/texture.png);
 }
 .App {
-  padding: 90px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
