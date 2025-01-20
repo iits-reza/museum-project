@@ -1,6 +1,6 @@
 *,
 body {
-  background-image: url(../public/images/texture.png);
+  /* background-image: url(../public/images/texture.png); */
 }
 .App {
   display: flex;
