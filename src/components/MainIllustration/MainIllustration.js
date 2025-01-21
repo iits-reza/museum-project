@@ -5,12 +5,8 @@ export default function MainIllustration() {
   return (
     <div className="illustration">
       <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.4,
-          scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-        }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         style={bluebg}
       ></motion.div>
       <motion.div>

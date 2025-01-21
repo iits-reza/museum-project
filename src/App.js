@@ -18,7 +18,7 @@ function App() {
   };
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <MainIllustration />
       {/* <LotusAnimation /> */}
       {/* <Lottie options={defaultOptions} height={40} width={40} /> */}
