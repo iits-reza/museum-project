@@ -1,26 +1,31 @@
 .header {
+  padding: 0;
+  margin: 0;
   text-align: center;
   display: table;
   width: 100%;
   height: 100vh;
+  background-color: rgb(50, 126, 248);
 }
 .header__title {
   margin: auto 0;
   font-size: 130px;
+}
+.title {
+  color: #000;
+  font-size: 10rem;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
   display: table-cell;
   vertical-align: middle;
 }
-/* .header__cover {
-  height: 400px;
-  width: 100%;
-  background-size: cover;
-  background-image: url(../../images/bamiyanbg.png);
+.cursor {
+  background-color: #111;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
-.header__bottom {
-  height: 200px;
-  width: 100%;
-  background-size: contain;
-  background-image: url(../../images/header.jpg);
-} */
