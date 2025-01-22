@@ -1,9 +1,13 @@
 *,
 body {
+  padding: 0;
+  margin: 0;
   /* background-image: url(../public/images/texture.png); */
 }
 .App {
+  background-color: dodgerblue;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
 }
