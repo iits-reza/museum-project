@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./header.css";
+import { BuddhaModel } from "../BuddhaModel/BuddhaModel";
+import { Canvas } from "@react-three/fiber";
 const Header = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -43,6 +45,9 @@ const Header = () => {
   const textLeave = () => setCursorVariant("default");
   return (
     <header className="header">
+      <Canvas>
+        <BuddhaModel />
+      </Canvas>
       <motion.h1
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
