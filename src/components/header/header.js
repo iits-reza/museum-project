@@ -45,9 +45,7 @@ const Header = () => {
   const textLeave = () => setCursorVariant("default");
   return (
     <header className="header">
-      <Canvas>
-        <BuddhaModel />
-      </Canvas>
+      <BuddhaModel />
       <motion.h1
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
