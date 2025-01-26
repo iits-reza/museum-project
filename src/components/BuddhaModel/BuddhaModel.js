@@ -11,6 +11,7 @@ import {
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { easing, geometry } from "maath";
+
 extend(geometry);
 
 export const BuddhaModel = () => {
@@ -35,9 +36,8 @@ export const BuddhaModel = () => {
 function Model(props) {
   const group = useRef();
   const light = useRef();
-  // const { scene } = useGLTF("models/spinb.glb");
-  const { nodes } = useLoader(GLTFLoader("models/spinb.glb"));
-  // const geometry = new THREE.;
+  const { nodes } = useGLTF("buddha.glb");
+  console.log(nodes);
   useFrame((state, delta) => {
     easing.dampE(
       group.current.rotation,
@@ -63,13 +63,11 @@ function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.NODE_3.geometry}
+        geometry={nodes.buddha.geometry}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={0.2}
         dispose={null}
-      >
-        <meshLambertMaterial color="#404044" />
-      </mesh>
+      ></mesh>
 
       <spotLight
         angle={0.5}
