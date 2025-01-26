@@ -1,6 +1,6 @@
 // src/components/ModelComponent.js
 import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
 import {
   CameraControls,
   Html,
@@ -9,7 +9,9 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { easing, geometry } from "maath";
+extend(geometry);
 
 export const BuddhaModel = () => {
   return (
@@ -33,7 +35,9 @@ export const BuddhaModel = () => {
 function Model(props) {
   const group = useRef();
   const light = useRef();
-  const { scene } = useGLTF("models/spinb.glb");
+  // const { scene } = useGLTF("models/spinb.glb");
+  const { nodes } = useLoader(GLTFLoader("models/spinb.glb"));
+  // const geometry = new THREE.;
   useFrame((state, delta) => {
     easing.dampE(
       group.current.rotation,
@@ -59,22 +63,14 @@ function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={new THREE.SphereGeometry(1, 16, 16)}
+        geometry={nodes.NODE_3.geometry}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={0.2}
         dispose={null}
       >
         <meshLambertMaterial color="#404044" />
       </mesh>
-      <Annotation position={[1.75, 3, 2.5]}>
-        Thalia <span style={{ fontSize: "1.5em" }}>🌗</span>
-      </Annotation>
-      <Annotation position={[-4.5, 3.6, -3]}>
-        Euphrosyne <span style={{ fontSize: "1.5em" }}>🌖</span>
-      </Annotation>
-      <Annotation position={[1.5, 8, -3]}>
-        <span style={{ fontSize: "1.5em" }}>🌕</span> Aglaia
-      </Annotation>
+
       <spotLight
         angle={0.5}
         penumbra={0.5}
@@ -90,24 +86,5 @@ function Model(props) {
         />
       </spotLight>
     </group>
-  );
-}
-function Annotation({ children, ...props }) {
-  return (
-    <Html
-      {...props}
-      transform
-      occlude="blending"
-      geometry={
-        /** The geometry is optional, it allows you to use any shape.
-         *  By default it would be a plane. We need round edges here ...
-         */
-        <roundedPlaneGeometry args={[1.66, 0.47, 0.24]} />
-      }
-    >
-      <div className="annotation" onClick={() => console.log(".")}>
-        {children}
-      </div>
-    </Html>
   );
 }
