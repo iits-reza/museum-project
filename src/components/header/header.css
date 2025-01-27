@@ -1,15 +1,25 @@
 .header {
+  /* background: radial-gradient(
+    circle at bottom center,
+    rgba(60, 60, 60, 1) 0%,
+    rgba(0, 0, 0, 1) 58%
+  ); */
+  cursor: url("https://github.com/chenglou/react-motion/raw/master/demos/demo8-draggable-list/cursor.png")
+      39 39,
+    auto;
   padding: 0;
   margin: 0;
   text-align: center;
   width: 100%;
   height: 100vh;
   background-color: #fff;
-  display: table;
+  /* display: table; */
+  position: relative;
 }
 
 .header__title {
-  color: dodgerblue;
+  position: absolute;
+  color: rgba(206, 206, 206, 0.537);
   height: 100px;
   font-size: 10rem;
   text-align: center;

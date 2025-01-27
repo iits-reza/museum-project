@@ -11,25 +11,34 @@ import {
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { easing, geometry } from "maath";
+import "./BuddhaModel.css";
 
 extend(geometry);
 
 export const BuddhaModel = () => {
   return (
-    <Canvas shadows="basic" camera={{ position: [0, 2, 5], fov: 50 }}>
-      <ambientLight intensity={0.5} />
-      <fog attach="fog" args={["black", 0, 20]} />
-      <pointLight position={[10, -10, -20]} intensity={10} />
-      <pointLight position={[-10, -10, -20]} intensity={10} />
-      <Model position={[0, -5.5, 3]} rotation={[0, -0.2, 0]} />
-      <SoftShadows samples={3} />
-      <CameraControls
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI / 2}
-        minAzimuthAngle={-Math.PI / 2}
-        maxAzimuthAngle={Math.PI / 2}
-      />
-    </Canvas>
+    <div>
+      <Canvas
+        style={{ width: "100vw", height: "100vh" }}
+        className="model__canvas"
+        shadows="basic"
+        eventPrefix="client"
+        camera={{ position: [13, 16, 20], fov: 65 }}
+      >
+        <ambientLight intensity={0.9} />
+        <fog attach="fog" args={["black", 0, 20]} />
+        <pointLight position={[10, -10, -20]} intensity={10} />
+        <pointLight position={[-10, -10, -20]} intensity={10} />
+        <Model position={[0, -5.5, 3]} rotation={[0, -0.2, 0]} />
+        <SoftShadows samples={3} />
+        <CameraControls
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2}
+          minAzimuthAngle={-Math.PI / 2}
+          maxAzimuthAngle={Math.PI / 2}
+        />
+      </Canvas>
+    </div>
   );
 };
 
@@ -65,7 +74,7 @@ function Model(props) {
         receiveShadow
         geometry={nodes.buddha.geometry}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={0.2}
+        scale={1}
         dispose={null}
       ></mesh>
 
@@ -78,10 +87,10 @@ function Model(props) {
         shadow-mapSize={1024}
         shadow-bias={-0.001}
       >
-        <orthographicCamera
+        {/* <orthographicCamera
           attach="shadow-camera"
           args={[-10, 10, -10, 10, 0.1, 50]}
-        />
+        /> */}
       </spotLight>
     </group>
   );
