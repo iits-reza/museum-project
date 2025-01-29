@@ -1,15 +1,12 @@
 // src/components/ModelComponent.js
 import React, { useRef } from "react";
-import { Canvas, extend, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, extend, useFrame } from "@react-three/fiber";
 import {
   CameraControls,
-  Html,
-  OrbitControls,
+  Environment,
   SoftShadows,
   useGLTF,
 } from "@react-three/drei";
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import { easing, geometry } from "maath";
 import "./BuddhaModel.css";
 
@@ -17,36 +14,31 @@ extend(geometry);
 
 export const BuddhaModel = () => {
   return (
-    <div>
-      <Canvas
-        style={{ width: "100vw", height: "100vh" }}
-        className="model__canvas"
-        shadows="basic"
-        eventPrefix="client"
-        camera={{ position: [13, 16, 20], fov: 65 }}
-      >
-        <ambientLight intensity={0.9} />
-        <fog attach="fog" args={["black", 0, 20]} />
-        <pointLight position={[10, -10, -20]} intensity={10} />
-        <pointLight position={[-10, -10, -20]} intensity={10} />
-        <Model position={[0, -5.5, 3]} rotation={[0, -0.2, 0]} />
-        <SoftShadows samples={3} />
-        <CameraControls
-          minPolarAngle={0}
-          maxPolarAngle={Math.PI / 2}
-          minAzimuthAngle={-Math.PI / 2}
-          maxAzimuthAngle={Math.PI / 2}
-        />
-      </Canvas>
-    </div>
+    <Canvas
+      shadows="basic"
+      eventSource={document.getElementById("root")}
+      eventPrefix="client"
+      camera={{ position: [0, 1.5, 14], fov: 45 }}
+    >
+      <fog attach="fog" args={["black", 0, 20]} />
+      <pointLight position={[10, -10, -20]} intensity={10} />
+      <pointLight position={[-10, -10, -20]} intensity={10} />
+      <Model position={[0, -5.5, 3]} rotation={[0, -0.2, 0]} />
+      <SoftShadows samples={3} />
+      <CameraControls
+        minPolarAngle={0}
+        maxPolarAngle={Math.PI / 2}
+        minAzimuthAngle={-Math.PI / 2}
+        maxAzimuthAngle={Math.PI / 2}
+      />
+    </Canvas>
   );
 };
 
 function Model(props) {
   const group = useRef();
   const light = useRef();
-  const { nodes } = useGLTF("buddha.glb");
-  console.log(nodes);
+  const { nodes } = useGLTF("/head_of_the_buddha.glb");
   useFrame((state, delta) => {
     easing.dampE(
       group.current.rotation,
@@ -72,11 +64,13 @@ function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.buddha.geometry}
+        geometry={nodes.Sketchfab_model.geometry}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={1}
+        scale={0.2}
         dispose={null}
-      ></mesh>
+      >
+        <meshLambertMaterial color="#404044" />
+      </mesh>
 
       <spotLight
         angle={0.5}
@@ -87,10 +81,10 @@ function Model(props) {
         shadow-mapSize={1024}
         shadow-bias={-0.001}
       >
-        {/* <orthographicCamera
+        <orthographicCamera
           attach="shadow-camera"
           args={[-10, 10, -10, 10, 0.1, 50]}
-        /> */}
+        />
       </spotLight>
     </group>
   );
