@@ -1,12 +1,7 @@
-// src/components/ModelComponent.js
 import React, { useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import {
-  CameraControls,
-  Environment,
-  SoftShadows,
-  useGLTF,
-} from "@react-three/drei";
+import { CameraControls, SoftShadows, useGLTF } from "@react-three/drei";
+
 import { easing, geometry } from "maath";
 import "./BuddhaModel.css";
 
@@ -16,14 +11,16 @@ export const BuddhaModel = () => {
   return (
     <Canvas
       shadows="basic"
-      eventSource={document.getElementById("root")}
       eventPrefix="client"
-      camera={{ position: [0, 1.5, 14], fov: 45 }}
+      camera={{
+        position: [17.48, 8.44, 8.37],
+        rotation: [-45.25, 55.38, 35.69],
+        fov: 50,
+      }}
     >
       <fog attach="fog" args={["black", 0, 20]} />
-      <pointLight position={[10, -10, -20]} intensity={10} />
-      <pointLight position={[-10, -10, -20]} intensity={10} />
-      <Model position={[0, -5.5, 3]} rotation={[0, -0.2, 0]} />
+      <directionalLight position={[12, 8, -5]} intensity={10} />
+      <Model position={[17.48, 8.44, 8.37]} rotation={[-45.25, 55.38, 35.69]} />
       <SoftShadows samples={3} />
       <CameraControls
         minPolarAngle={0}
@@ -38,7 +35,7 @@ export const BuddhaModel = () => {
 function Model(props) {
   const group = useRef();
   const light = useRef();
-  const { nodes } = useGLTF("/head_of_the_buddha.glb");
+  const { nodes } = useGLTF("/scene.glb");
   useFrame((state, delta) => {
     easing.dampE(
       group.current.rotation,
@@ -64,12 +61,12 @@ function Model(props) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Sketchfab_model.geometry}
+        geometry={nodes.buddha.geometry}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={0.2}
         dispose={null}
       >
-        <meshLambertMaterial color="#404044" />
+        <meshLambertMaterial color="blue" />
       </mesh>
 
       <spotLight
