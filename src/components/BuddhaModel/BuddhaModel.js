@@ -13,14 +13,14 @@ export const BuddhaModel = () => {
       shadows="basic"
       eventPrefix="client"
       camera={{
-        position: [17.48, 8.44, 8.37],
-        rotation: [-45.25, 55.38, 35.69],
-        fov: 50,
+        position: [-40.556, 12.267, 115.498],
+        rotation: [-67.57, 56.68, 4.31],
+        fov: 40,
+        // far: 1000.0,
       }}
     >
-      <fog attach="fog" args={["black", 0, 20]} />
       <directionalLight position={[12, 8, -5]} intensity={10} />
-      <Model position={[17.48, 8.44, 8.37]} rotation={[-45.25, 55.38, 35.69]} />
+      <Model />
       <SoftShadows samples={3} />
       <CameraControls
         minPolarAngle={0}
@@ -62,11 +62,12 @@ function Model(props) {
         castShadow
         receiveShadow
         geometry={nodes.buddha.geometry}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={0.2}
+        scale={0.45}
+        position={[-25.9, -25.317, -0.956]}
+        rotation={[20, -0.1, 19]}
         dispose={null}
       >
-        <meshLambertMaterial color="blue" />
+        <meshLambertMaterial color="grey" />
       </mesh>
 
       <spotLight

@@ -1,10 +1,9 @@
 .header {
-  /* background: radial-gradient(
+  background: radial-gradient(
     circle at bottom center,
     rgba(60, 60, 60, 1) 0%,
     rgba(0, 0, 0, 1) 58%
-  ); */
-  background: wheat;
+  );
   cursor: url("https://github.com/chenglou/react-motion/raw/master/demos/demo8-draggable-list/cursor.png")
       39 39,
     auto;
@@ -13,9 +12,13 @@
   text-align: center;
   width: 100%;
   height: 100vh;
-  background-color: #fff;
   /* display: table; */
   position: relative;
+}
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
 }
 
 .header__title {
