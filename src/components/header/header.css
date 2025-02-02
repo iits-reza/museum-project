@@ -12,7 +12,6 @@
   text-align: center;
   width: 100%;
   height: 100vh;
-  /* display: table; */
   position: relative;
 }
 canvas {
@@ -23,13 +22,13 @@ canvas {
 
 .header__title {
   position: absolute;
-  color: rgba(206, 206, 206, 0.537);
+  color: rgba(235, 235, 235, 0.537);
+  top: 25%;
   height: 100px;
   font-size: 10rem;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  display: table-cell;
-  vertical-align: middle;
+  z-index: 9;
 }
 .cursor {
   background-color: #111;

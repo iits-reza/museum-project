@@ -1,6 +1,11 @@
 import React, { useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import { CameraControls, SoftShadows, useGLTF } from "@react-three/drei";
+import {
+  CameraControls,
+  ScrollControls,
+  SoftShadows,
+  useGLTF,
+} from "@react-three/drei";
 
 import { easing, geometry } from "maath";
 import "./BuddhaModel.css";
@@ -10,16 +15,20 @@ extend(geometry);
 export const BuddhaModel = () => {
   return (
     <Canvas
+      className="model__canvas"
       shadows="basic"
       eventPrefix="client"
       camera={{
         position: [-40.556, 12.267, 115.498],
-        rotation: [-67.57, 56.68, 4.31],
+        rotation: [-67.57, 56.68, 4.39],
         fov: 40,
         // far: 1000.0,
       }}
     >
-      <directionalLight position={[12, 8, -5]} intensity={10} />
+      <directionalLight position={(1, 1, 1)} intensity={3} />
+      {/* <fog attach="fog" args={["grey", 1, 1.0]} /> */}
+      <pointLight position={[10, 10, -20]} intensity={10} />
+      <pointLight position={[-10, -10, -20]} intensity={10} />
       <Model />
       <SoftShadows samples={3} />
       <CameraControls
@@ -27,6 +36,7 @@ export const BuddhaModel = () => {
         maxPolarAngle={Math.PI / 2}
         minAzimuthAngle={-Math.PI / 2}
         maxAzimuthAngle={Math.PI / 2}
+        mouseButtons={{ wheel: 0 }}
       />
     </Canvas>
   );
@@ -64,10 +74,10 @@ function Model(props) {
         geometry={nodes.buddha.geometry}
         scale={0.45}
         position={[-25.9, -25.317, -0.956]}
-        rotation={[20, -0.1, 19]}
+        rotation={[20.3, -0.09, 19]}
         dispose={null}
       >
-        <meshLambertMaterial color="grey" />
+        <meshStandardMaterial color="grey" />
       </mesh>
 
       <spotLight

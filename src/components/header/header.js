@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./header.css";
 import { BuddhaModel } from "../BuddhaModel/BuddhaModel";
-import { Canvas } from "@react-three/fiber";
 const Header = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -37,7 +36,7 @@ const Header = () => {
       width: 150,
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
-      backgroundColor: "orange",
+      backgroundColor: "grey",
       mixBlendMode: "difference",
     },
   };
@@ -45,7 +44,6 @@ const Header = () => {
   const textLeave = () => setCursorVariant("default");
   return (
     <header className="header">
-      <BuddhaModel />
       <motion.h1
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
@@ -61,6 +59,7 @@ const Header = () => {
       >
         Bamiyan The land of wonders
       </motion.h1>
+      <BuddhaModel />
       <motion.div
         className="cursor"
         variants={variants}
