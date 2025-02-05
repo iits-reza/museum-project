@@ -1,11 +1,6 @@
 import React, { useRef } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
-import {
-  CameraControls,
-  ScrollControls,
-  SoftShadows,
-  useGLTF,
-} from "@react-three/drei";
+import { CameraControls, SoftShadows, useGLTF } from "@react-three/drei";
 
 import { easing, geometry } from "maath";
 import "./BuddhaModel.css";
