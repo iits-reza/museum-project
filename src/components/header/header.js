@@ -55,7 +55,7 @@ const Header = () => {
         whileInView={{ y: 0 }}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 1.5, delay: 0.25 }}
       >
         Bamiyan The land of wonders
       </motion.h1>

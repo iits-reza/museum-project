@@ -1,8 +1,6 @@
 import * as motion from "motion/react-client";
 import "./MainIllustration.css";
 import BuddhaStatueSrc from "../../images/asset_main/buddha_statue.png";
-import rightTreeSrc from "../../images/asset_main/right_tree.png";
-import leftTreeSrc from "../../images/asset_main/left_tree.png";
 
 import Lottie from "react-lottie";
 import ScrollIcon from "../../lotties/mouse_animation";
@@ -18,38 +16,34 @@ export default function MainIllustration() {
   };
   return (
     <div className="illustration">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        style={bluebg}
-      ></motion.div>
-      {/* <motion.div> */}
-      <motion.img
-        src={BuddhaStatueSrc}
-        alt="Buddha statue"
-        style={buddhaImageStyle}
-        initial={{ translateY: 100 }}
-        whileInView={{ translateY: 0 }}
-        transition={{ duration: 0.3 }}
-      />
-      <motion.img
-        src={rightTreeSrc}
-        alt="Buddha statue"
-        style={rightThreeImageStyle}
-        initial={{ translateX: 220 }}
-        whileInView={{ translateX: 120 }}
-        transition={{ duration: 0.3 }}
-      />
-      <motion.img
-        src={leftTreeSrc}
-        alt="Buddha statue"
-        style={leftThreeImageStyle}
-        initial={{ translateX: -200 }}
-        whileInView={{ translateX: -180 }}
-        transition={{ duration: 0.3 }}
-      />
-      {/* </motion.div> */}
-      <Lottie options={defaultOptions} height={40} width={40} />
+      <div className="illustration_left">
+        <motion.h1>The greate Buddha statue of Bamiyan</motion.h1>
+        <motion.p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </motion.p>
+      </div>
+      <div className="illustration_right">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          style={bluebg}
+        ></motion.div>
+        <motion.img
+          src={BuddhaStatueSrc}
+          alt="Buddha statue"
+          style={buddhaImageStyle}
+          initial={{ translateY: 100 }}
+          whileInView={{ translateY: 0 }}
+          transition={{ duration: 1.3 }}
+        />
+      </div>
+      {/* <Lottie options={defaultOptions} height={40} width={40} /> */}
     </div>
   );
 }
@@ -65,17 +59,5 @@ const buddhaImageStyle = {
   position: "absolute",
   width: 618,
   left: "49.3%",
-  top: "18%",
-};
-const rightThreeImageStyle = {
-  position: "absolute",
-  width: 518,
-  left: "49.3%",
-  top: "18%",
-};
-const leftThreeImageStyle = {
-  position: "absolute",
-  width: 518,
-  left: "49.3%",
-  top: "18%",
+  top: "30%",
 };
