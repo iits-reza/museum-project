@@ -8,28 +8,66 @@
   flex: 1;
   gap: 10px;
 }
-.illustration_right {
+.illustration__right {
   position: relative;
-  /* border: 1px solid black; */
   width: 50%;
   height: 800px;
 }
-.illustration_left {
+.illustration__left {
+  margin-left: 100px;
   /* border: 1px solid red; */
   width: 50%;
   height: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.illustration_bluebg {
+.illustration__bluebg {
   position: "absolute";
-  left: "50%";
+  /* left: "50%"; */
   width: 500px;
   height: 500px;
   background: #5d96fc;
   border-radius: 50%;
 }
-.illsutration_buddhaImageStyle {
+.illsutration__buddhaImageStyle {
+  /* opacity: 60%; */
   position: absolute;
-  width: 518px;
-  left: 49.3%;
-  top: 30%;
+  width: 512px;
+  left: -1%;
+  top: 15%;
+  z-index: 2;
+}
+.illustration__title {
+  width: 80%;
+  font-family: "Times New Roman", Times, serif;
+}
+.illsutration__description {
+  width: 80%;
+  line-height: 25px;
+}
+.illsutration__Bird1ImageStyle {
+  position: absolute;
+  top: 10px;
+  top: 10px;
+  width: 150px;
+  z-index: 2;
+}
+.illsutration__Bird2ImageStyle {
+  position: absolute;
+  bottom: 200px;
+  /* width: 150px; */
+  z-index: 2;
+}
+.illsutration__mounts,
+.illsutration__clouds {
+  position: absolute;
+  width: 500px;
+  top: 93px;
+  z-index: 1;
+}
+.illsutration__clouds {
+  top: 50px;
+  width: 400px;
+  left: 10%;
 }
