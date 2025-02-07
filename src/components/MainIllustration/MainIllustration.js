@@ -30,14 +30,14 @@ export default function MainIllustration() {
       </div>
       <div className="illustration_right">
         <motion.div
+          className="illustration_bluebg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          style={bluebg}
         ></motion.div>
         <motion.img
           src={BuddhaStatueSrc}
+          className="illsutration_buddhaImageStyle"
           alt="Buddha statue"
-          style={buddhaImageStyle}
           initial={{ translateY: 100 }}
           whileInView={{ translateY: 0 }}
           transition={{ duration: 1.3 }}
@@ -47,17 +47,3 @@ export default function MainIllustration() {
     </div>
   );
 }
-const bluebg = {
-  position: "absolute",
-  left: "50%",
-  width: 600,
-  height: 600,
-  background: "#5D96FC",
-  borderRadius: "50%",
-};
-const buddhaImageStyle = {
-  position: "absolute",
-  width: 618,
-  left: "49.3%",
-  top: "30%",
-};
