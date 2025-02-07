@@ -7,10 +7,18 @@
   background: #fff;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  gap: 100px;
+  border: 1px solid black;
 }
-.illustration__right {
-  float: right;
+.illustration_right {
+  width: 500px;
+  height: 800px;
+  margin-left: auto;
 }
-.illustration__right {
-  float: left;
+.illustration_right {
+  width: 500px;
+  height: 800px;
+  margin-right: auto;
 }
