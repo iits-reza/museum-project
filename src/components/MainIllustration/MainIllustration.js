@@ -21,7 +21,18 @@ export default function MainIllustration() {
   return (
     <div className="illustration">
       <div className="illustration__left">
-        <motion.h1 className="illustration__title">
+        <motion.h1
+          className="illustration__title"
+          initial={{ color: "#000" }}
+          whileInView={{ color: "#fff" }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <motion.span
+            className="illustration__title_bg"
+            initial={{ width: 0 }}
+            whileInView={{ width: "100%" }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          ></motion.span>
           The greate Buddha statues of Bamiyan
         </motion.h1>
         <motion.p className="illustration__description">

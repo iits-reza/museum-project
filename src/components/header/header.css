@@ -31,7 +31,7 @@ canvas {
   z-index: 9;
 }
 .cursor {
-  background-color: #111;
+  background-color: #1111114f;
   height: 32px;
   width: 32px;
   border-radius: 50%;
@@ -39,4 +39,5 @@ canvas {
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 11;
 }

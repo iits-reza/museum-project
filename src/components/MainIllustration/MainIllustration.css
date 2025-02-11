@@ -5,8 +5,9 @@
   height: 100vh;
   background: #fff;
   display: flex;
+  align-content: space-evenly;
   flex: 1;
-  gap: 10px;
+  gap: 100px;
 }
 .illustration__right {
   position: relative;
@@ -40,11 +41,22 @@
 }
 .illustration__title {
   width: 80%;
+  font-size: 5rem;
   font-family: "Times New Roman", Times, serif;
+  position: relative;
+  z-index: 11;
+}
+.illustration__title_bg {
+  position: absolute;
+  background-color: rgb(128, 119, 0);
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 .illsutration__description {
   width: 80%;
-  line-height: 25px;
+  line-height: 35px;
 }
 .illsutration__Bird1ImageStyle {
   position: absolute;
