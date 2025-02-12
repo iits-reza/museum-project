@@ -1,34 +1,18 @@
 .animatedAvatar {
   padding: 90px;
   position: relative;
+  display: flex;
+}
+.animatedAvatar__frame {
+  width: 450px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-start-start-radius: 50%;
+  border-start-end-radius: 50%;
 }
 .buddhaImagePainting {
-  width: 500px;
-}
-.animatedAvtar_circle {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  background-color: rgb(219, 185, 100);
-  border-radius: 50%;
-  border: 5px black dotted;
-  -webkit-animation: spin 0.2s linear infinite;
-  -moz-animation: spin 0.2s linear infinite;
-  animation: spin 0.2s linear infinite;
-}
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+  width: 80%;
 }
