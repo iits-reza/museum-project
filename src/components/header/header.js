@@ -1,52 +1,11 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import "./header.css";
 import { BuddhaModel } from "../BuddhaModel/BuddhaModel";
 const Header = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControlls = useAnimation();
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
-  const [cursorVariant, setCursorVariant] = useState("default");
-
-  useEffect(() => {
-    if (isInView) mainControlls.start("visible");
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-    window.addEventListener("mousemove", mouseMove);
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, [isInView]);
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-    },
-    text: {
-      height: 150,
-      width: 150,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-      backgroundColor: "grey",
-      mixBlendMode: "difference",
-    },
-  };
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
   return (
     <header className="header">
       <motion.h1
-        onMouseEnter={textEnter}
-        onMouseLeave={textLeave}
         className="header__title"
         variants={{
           hidden: { opacity: 0, y: 100 },
@@ -60,11 +19,6 @@ const Header = () => {
         Bamiyan The land of wonders
       </motion.h1>
       <BuddhaModel />
-      <motion.div
-        className="cursor"
-        variants={variants}
-        animate={cursorVariant}
-      />
     </header>
   );
 };
