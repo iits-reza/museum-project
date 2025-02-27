@@ -1,0 +1,10 @@
+.slider {
+  width: 100vw;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+.slider__image {
+  height: 100vh;
+}
