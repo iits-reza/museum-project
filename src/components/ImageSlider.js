@@ -1,5 +1,6 @@
 import "./ImageSlider.css";
 import ImgSrc from "../images/buddha.png";
+import ImageContainer from "./ImageContainer/ImageContainer";
 const ImageSlider = () => {
   const imgArray = [
     {
@@ -40,13 +41,20 @@ const ImageSlider = () => {
   ];
   return (
     <div className="slider">
-      {imgArray.map((image) => (
-        <div className="slider__container">
-          <h2>{image.title}</h2>
-          <p>{image.desc}</p>
-          <img src={image.src} alt={image.title} className="slider__image" />
+      <div className="slider__container">
+        <div className="slider__items">
+          {imgArray.map((image) => (
+            <div className="slider_item">
+              <ImageContainer
+                ImageDesc={image.desc}
+                ImageSrc={image.src}
+                ImageTitle={image.title}
+                key={image.index}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };
