@@ -1,0 +1,4 @@
+.image_slider {
+  height: auto;
+  width: clamp(10rem, 50vw, 60rem);
+}
