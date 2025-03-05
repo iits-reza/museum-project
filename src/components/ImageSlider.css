@@ -1,5 +1,8 @@
 .slider {
   height: 500vh;
+  background-color: purple;
+  position: relative;
+  padding: 110px;
 }
 .slider__container {
   height: 100vh;

@@ -1,5 +1,5 @@
 import "./ImageSlider.css";
-import ImgSrc from "../images/buddha.png";
+import ImgSrc from "../images/item 01.png";
 import ImageContainer from "./ImageContainer/ImageContainer";
 const ImageSlider = () => {
   const imgArray = [
@@ -43,16 +43,70 @@ const ImageSlider = () => {
     <div className="slider">
       <div className="slider__container">
         <div className="slider__items">
-          {imgArray.map((image) => (
-            <div className="slider_item">
-              <ImageContainer
-                ImageDesc={image.desc}
-                ImageSrc={image.src}
-                ImageTitle={image.title}
-                key={image.index}
-              />
-            </div>
-          ))}
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
+          <div className="slider_item">
+            <ImageContainer
+              ImageDesc="Bamiyan"
+              ImageSrc={ImgSrc}
+              ImageTitle="Title "
+              key={1}
+            />
+          </div>
         </div>
       </div>
     </div>
