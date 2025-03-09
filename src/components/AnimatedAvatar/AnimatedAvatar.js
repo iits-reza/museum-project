@@ -36,31 +36,18 @@ export const AnimatedAvatar = () => {
         whileInView={{
           translateY: 0,
         }}
-        className="animatedAvatar__frame"
+        className="avatar__info"
       >
-        <img
-          className="buddhaImagePainting"
-          src={BuddhaImage}
-          alt="Buddha painting"
-        />
-      </motion.div>
-      <motion.div
-        initial={{
-          translateY: 60,
-        }}
-        transition={{
-          duration: 0.4,
-        }}
-        whileInView={{
-          translateY: 0,
-        }}
-        className="animatedAvatar__frame"
-      >
-        <img
-          className="buddhaImagePainting"
-          src={secondImg}
-          alt="Buddha painting"
-        />
+        <h1 className="avatar__title">Shahr-e- Zohak or Red city</h1>
+        <p className="avatar__description">
+          There are many legends among the Hazara people about this city. One of
+          them is the following legend: In this military fortress, a powerful
+          king known as Zahhak ruled. To protect himself from enemies, he kept
+          two snakes on his shoulders, which were said to eat human brains. The
+          local population had to prepare one of their own people to feed these
+          snakes. One day, one of them attacked the king, ate his brains, and
+          disappeared into the valley near the palace.
+        </p>
       </motion.div>
     </div>
   );
