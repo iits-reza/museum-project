@@ -2,8 +2,6 @@ import React from "react";
 import "./AnimatedAvatar.css";
 import * as motion from "motion/react-client";
 
-import BuddhaImage from "../../images/buddha.png";
-import secondImg from "../../images/moughul.png";
 import ThirdImg from "../../images/zuhak.png";
 export const AnimatedAvatar = () => {
   return (

@@ -3,8 +3,7 @@
   padding: 90px;
   position: relative;
   display: flex;
-  align-content: space-between;
-  gap: 40px;
+  gap: 50px;
 }
 .animatedAvatar__frame {
   height: 600px;
